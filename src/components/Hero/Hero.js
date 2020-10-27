@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from './Hero.scss';
+import PropTypes from 'prop-types';
 
-const Hero = () => (
+const Hero = props => (
     <header className={styles.component}>
-        <h2 className={styles.title}>Things to do!</h2>
-        <img src="https://i.postimg.cc/6pLP9t9Q/space-1.png" className={styles.image}></img>
+        <h2 className={styles.title}>{props.titleText}</h2>
+        <img className={styles.image} src={props.image} />
     </header>
 );
 
+Hero.propTypes = {
+    titleText: PropTypes.node.isRequired,// typ zbiorczy , coś co da się wyświetlić na stronie
+    image: PropTypes.string,
+};
 export default Hero;
