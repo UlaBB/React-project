@@ -13,6 +13,7 @@ const initialState = {
   searchString: '',
 };
 
+
 // define reducers
 const reducers = {
   columns: columnsReducer,
