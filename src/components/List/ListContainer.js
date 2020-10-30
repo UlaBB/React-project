@@ -4,13 +4,14 @@ import { getColumnsForList, createActionAddColumn } from '../../redux/columnsRed
 
 // export const getColumnsForList = ({ columns }, listId) => columns.filter(column => column.listId == listId);
 
+//poniższa funkcja dodaje propsy komponentu List
 const mapStateToProps = (state, props) => ({
   columns: getColumnsForList(state, props.id),
 });
 
 
 const mapDispatchToProps = (dispatch, props) => ({
-  addColumn: title => dispatch(createActionAddColumn({
+  addColumn: title => dispatch(createActionAddColumn({ //props addColumn zawiera funkcję przyjmującą jeden argument
     listId: props.id,
     title,
   })),
